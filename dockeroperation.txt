@@ -1,0 +1,37 @@
+------For java------
+FROM openjdk:latest
+WORKDIR /app
+COPY .   /app
+RUN javac HelloWorld.java
+CMD ["java", "HelloWorld"]
+
+commands:
+docker build -t java-hello-world   .
+docker container run --name java-hello-world java-hello-world
+
+
+-----For python-----
+FROM python:3.9-slim-buster
+WORKDIR    /app
+COPY   .     /app
+CMD ["python", "app.py"]
+
+commands:
+docker build -t docker-hello-world-python .
+docker container run docker-hello-world-python
+
+
+-----For tomcat-----
+commands:
+sudo systemctl status docker
+sudo systemctl enable docker
+sudo systemctl start docker
+sudo docker container run -it --name tomcat -d --rm -p 9999:8080 tomcat:8.0
+sudo docker container list
+sudo docker container top tomcat
+sudo docker container run -it --name tomcat -d --rm -p 9999:8080 tomcat:8.0
+sudo docker stop tomcat
+sudo docker stop container tomcat
+sudo docker container stop tomcat
+sudo docker container top tomcat
+

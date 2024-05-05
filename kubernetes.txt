@@ -1,0 +1,50 @@
+-----Creating a pod-----
+kubectl    run    my-nginx    --image     nginx
+kubectl get pods
+kubectl describe pod my-nginx
+minikube ssh
+docker ps | grep nginx 
+docker exec -it <container id> sh
+hostname
+hostname -i
+While we are inside the container, try curl <ip address of pod> - Should show nginx home page
+Then exit
+kubectl get pods -o wide 
+kubectl delete pod my-nginx
+kubectl get pods
+
+
+-----Deployment-----
+kubectl create deployment nginx-deployment --image=nginx
+kubectl get pods
+kubectl get deployments
+kubectl describe pods
+kubectl describe deployments or kubectl describe deployment nginx-deployment
+kubectl get pods
+kubectl scale deployment nginx-deployment   --replicas=5
+kubectl get pods
+kubectl get pods -o wide
+kubectl get deployments
+kubectl describe deployment nginx-deployment
+
+Expose the deployment:
+kubectl expose deployment nginx-deployment --port=8080 --target-port=80
+kubectl get services
+
+command allows us to connect the service port to a local port:
+kubectl port-forward
+kubectl port-forward service/<service-name> <local-port>:<service-port>
+kubectl port-forward service/nginx-deployment 7777:8080
+
+Now serarch in browser:
+localhost:7777
+
+Clean up:
+kubectl delete deployment nginx-deployment
+kubectl delete service nginx-deployment
+
+Check:
+kubectl get deployment
+kubectl get service
+kubectl get pod
+

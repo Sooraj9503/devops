@@ -1,0 +1,24 @@
+1. docker pull: Pulls an image or a repository from a registry.
+docker pull <image_name>:<tag>
+2. docker build: Builds an image from a Dockerfile.
+docker build -t <image_name>:<tag> <path_to_Dockerfile>
+3. docker run: Runs a container from an image.
+docker run <image_name>:<tag>
+4. docker ps: Lists running containers.
+docker ps
+5. docker ps -a: Lists all containers (including stopped ones).
+docker ps -a
+6. docker stop: Stops a running container.
+docker stop <container_id>
+7. docker rm: Removes a container.
+docker rm <container_id>
+8. docker images: Lists downloaded images.
+docker images
+9. docker rmi: Removes an image.
+docker rmi <image_name>:<tag>
+10. docker exec: Runs a command in a running container.
+docker exec -it <container_id> <command>
+11. docker-compose up: Builds, (re)creates, starts, and attaches to containers for a service.
+docker-compose up
+12. docker-compose down: Stops and removes containers, networks, volumes, and images created by up.
+docker-compose down

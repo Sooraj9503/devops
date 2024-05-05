@@ -1,0 +1,23 @@
+1. If Jenkins is installed as a service, you can start it using:
+sudo service jenkins start
+2. Stopping Jenkins:
+sudo service jenkins stop
+3. Restarting Jenkins:
+sudo service jenkins restart
+4. Accessing Jenkins UI:
+- Open a web browser and navigate to http://localhost:8080 (or the appropriate URL if Jenkins is hosted elsewhere).
+- Follow the on-screen instructions to complete the initial setup.
+5. Installing Plugins:
+- Log in to the Jenkins UI.
+- Go to "Manage Jenkins" > "Manage Plugins" > "Available" tab.
+- Select the plugins you want to install and click "Install without restart" or "Download now and install after restart".
+6. Creating a New Job:
+- Click on "New Item" on the Jenkins dashboard.
+- Enter a name for the job and select the type of job (freestyle project, pipeline, etc.).
+- Configure the job settings and click "Save".
+7. Running a Job:
+- Click on the job name from the Jenkins dashboard.
+- Click "Build Now" to manually trigger a build.
+8. Viewing Build Results:
+- Click on the job name from the Jenkins dashboard.
+- Click on a specific build number to view the build details, console output, and other information.
